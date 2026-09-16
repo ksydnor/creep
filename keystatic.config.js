@@ -1,3 +1,4 @@
+import { createElement } from "react";
 import { collection, config, fields, singleton } from "@keystatic/core";
 
 const image = (label, directory, publicPath) =>
@@ -8,24 +9,65 @@ const image = (label, directory, publicPath) =>
 
 const projectImage = (label) => image(label, "public/assets/projects", "/assets/projects/");
 
+// The work index groups by these. Add one here to offer it in the editor.
+const categories = ["Typography", "Editorial / Print", "Posters / Exhibition", "Animation / 3D", "Animated GIFs", "Currency / Illustration", "Playing cards"];
+
+// Every section eyebrow and title an editor might want to reword, with the
+// wording the site uses when the field is left empty (applied in lib/content.js).
+export const headingDefaults = {
+  featuredEyebrow: "Featured work",
+  featuredTitle: "Recent works",
+  indexEyebrow: "Index",
+  indexTitle: "Portfolio index.",
+  rhythmEyebrow: "Visual rhythm",
+  rhythmTitle: "Selected spreads and objects.",
+  aboutEyebrow: "About",
+  workTitle: "Work Index",
+  workEyebrow: "Selected work",
+  workSubtitle: "Projects by category.",
+  noteEyebrow: "Project note",
+  noteTitle: "Context and intention.",
+  galleryEyebrow: "Gallery",
+  galleryTitle: "Selected visuals."
+};
+
+const headingLabel = (key) => key.replace(/([A-Z])/g, " $1").toLowerCase().replace(/^./, (c) => c.toUpperCase());
+const headings = fields.object(
+  Object.fromEntries(
+    Object.entries(headingDefaults).map(([key, fallback]) => [key, fields.text({ label: headingLabel(key), description: `Default: ${fallback}` })])
+  ),
+  { label: "Section headings", description: "Leave a field empty to keep the default wording." }
+);
+
 export default config({
   storage: { kind: "local" },
-  ui: { brand: { name: "Pari Santani" } },
+  ui: { brand: { name: "Pari Santani", mark: () => createElement("img", { src: "/icon.svg", alt: "", width: 24, height: 24 }) } },
   collections: {
     projects: collection({
       label: "Projects",
       path: "content/projects/*",
       slugField: "title",
       format: { data: "yaml" },
-      columns: ["order", "category"],
+      columns: ["order", "category", "draft"],
+      previewUrl: "/work/{slug}",
       schema: {
         title: fields.slug({ name: { label: "Project title" }, slug: { label: "Web address", description: "The end of the URL: type-specimen becomes /work/type-specimen." } }),
         order: fields.integer({ label: "Order", description: "1 is first. The site follows this order everywhere.", validation: { isRequired: true, min: 1 } }),
-        category: fields.text({ label: "Category", validation: { isRequired: true } }),
+        draft: fields.checkbox({ label: "Hide from the site", description: "Tick while a project is unfinished. Untick to publish." }),
+        category: fields.select({ label: "Category", options: categories.map((c) => ({ label: c, value: c })), defaultValue: categories[0] }),
         course: fields.text({ label: "Course" }),
-        year: fields.text({ label: "Year" }),
-        tools: fields.array(fields.text({ label: "Tool" }), { label: "Tools & techniques", itemLabel: (p) => p.value }),
+        year: fields.text({ label: "Year", validation: { pattern: { regex: /^(\d{4})?$/, message: "Four digits, like 2026" } } }),
+        tools: fields.array(fields.text({ label: "Tool" }), { label: "Tools & techniques", itemLabel: (p) => p.value, validation: { length: { min: 1 } } }),
         featured: fields.checkbox({ label: "Show on the homepage" }),
+        videoUrl: fields.url({ label: "Video link", description: "A YouTube or Vimeo page address. Shown as a player above the gallery." }),
+        links: fields.array(
+          fields.object({
+            label: fields.text({ label: "Label", validation: { isRequired: true } }),
+            url: fields.url({ label: "Address", validation: { isRequired: true } })
+          }),
+          { label: "Links", description: "Live site, Instagram post, shop...", itemLabel: (p) => p.fields.label.value }
+        ),
+        pdf: fields.file({ label: "PDF (optional)", description: "Offered as a download on the project page.", directory: "public/assets/projects", publicPath: "/assets/projects/" }),
         accent: fields.text({ label: "Accent colour", description: "Hex code like #e42525.", validation: { isRequired: true, pattern: { regex: /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/, message: "Enter a hex colour like #e42525" } } }),
         shortDescription: fields.text({ label: "Short description", multiline: true, validation: { isRequired: true } }),
         longDescription: fields.text({ label: "Project note", multiline: true, validation: { isRequired: true } }),
@@ -74,12 +116,13 @@ export default config({
         statement: fields.text({ label: "Portfolio statement", multiline: true }),
         bio: fields.text({ label: "About text", multiline: true, description: "Leave a blank line between paragraphs." }),
         school: fields.text({ label: "School / program" }),
-        email: fields.text({ label: "Contact email" }),
+        email: fields.text({ label: "Contact email", validation: { pattern: { regex: /^([^\s@]+@[^\s@]+\.[^\s@]+)?$/, message: "Enter an email address" } } }),
         instagram: fields.url({ label: "Instagram link" }),
         headshot: fields.image({ label: "Photo of you (optional)", directory: "public/assets/site", publicPath: "/assets/site/" }),
         headshotAlt: fields.text({ label: "Describe the photo" }),
         cv: fields.file({ label: "CV (PDF, optional)", directory: "public/assets/site", publicPath: "/assets/site/" }),
-        heroImage: image("Homepage hero image", "public/assets/site", "/assets/site/")
+        heroImage: image("Homepage hero image", "public/assets/site", "/assets/site/"),
+        headings
       }
     })
   }

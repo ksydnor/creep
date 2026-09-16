@@ -85,4 +85,30 @@ UNIT
 systemctl daemon-reload
 systemctl enable --now pari-portfolio
 
+# Editor saves land in this checkout; push them hourly so a dead droplet
+# loses at most an hour of edits. deploy.sh does the same before a release.
+cat > /etc/systemd/system/pari-portfolio-backup.service <<UNIT
+[Unit]
+Description=Push content edited in /keystatic to git
+
+[Service]
+Type=oneshot
+WorkingDirectory=$APP_DIR
+ExecStart=/bin/sh -c 'git add content public/assets && (git commit -qm "Content edits" || true) && git push -q'
+UNIT
+cat > /etc/systemd/system/pari-portfolio-backup.timer <<UNIT
+[Unit]
+Description=Hourly content backup
+
+[Timer]
+OnCalendar=hourly
+RandomizedDelaySec=5min
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+UNIT
+systemctl daemon-reload
+systemctl enable --now pari-portfolio-backup.timer
+
 echo "Done. Point $DOMAIN (and www) at this droplet. Editor: https://$DOMAIN/keystatic (user pari)."

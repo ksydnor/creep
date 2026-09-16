@@ -9,11 +9,28 @@ function ProjectMetaItem({ label, value, wide = false }) {
   );
 }
 
+const linkClass = "underline decoration-bone/40 underline-offset-4 transition-colors duration-200 hover:decoration-bone";
+
+function ProjectLinks({ links, pdf }) {
+  const all = [...links, pdf && { label: "Download PDF", url: pdf }].filter(Boolean);
+  return (
+    <span className="flex flex-wrap gap-x-4 gap-y-1">
+      {all.map((link) => (
+        <a className={linkClass} href={link.url} key={link.url} rel="noopener">
+          {link.label}
+        </a>
+      ))}
+    </span>
+  );
+}
+
 export function ProjectHero({ project }) {
+  const hasLinks = project.links.length > 0 || project.pdf;
   const meta = [
     project.year && { label: "Year", value: project.year },
     project.course && { label: "Course", value: project.course },
-    project.tools.length > 0 && { label: "Tools", value: project.tools.join(", "), wide: true }
+    project.tools.length > 0 && { label: "Tools", value: project.tools.join(", "), wide: true },
+    hasLinks && { label: "Links", value: <ProjectLinks links={project.links} pdf={project.pdf} />, wide: true }
   ].filter(Boolean);
 
   return (

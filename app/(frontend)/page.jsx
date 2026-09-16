@@ -83,6 +83,7 @@ export default async function HomePage() {
   const bioExcerpt = (site.bio || "").split(/\n\s*\n/)[0].trim();
   const count = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"][projects.length - 1] || projects.length;
   const years = [...new Set(projects.map((project) => project.year).filter(Boolean))].sort().join(" to ");
+  const h = site.headings;
 
   return (
     <main>
@@ -94,7 +95,7 @@ export default async function HomePage() {
       ) : null}
 
       <section className="px-5 py-20 sm:px-8 lg:px-12">
-        <SectionHeading eyebrow="Featured work" title="Recent works" />
+        <SectionHeading eyebrow={h.featuredEyebrow} title={h.featuredTitle} />
         <div className="mt-12 grid auto-rows-[18rem] gap-5 md:grid-cols-6">
           {featuredProjects.map((project, index) => (
             <FeaturedWorkCard index={index} key={project.slug} project={project} />
@@ -104,14 +105,14 @@ export default async function HomePage() {
 
       <section className="border-y border-white/15 bg-paper py-20 text-ink">
         <div className="px-5 sm:px-8 lg:px-12">
-          <SectionHeading eyebrow="Index" title="Portfolio index." body={`All ${count} projects, in portfolio order.`} dark />
+          <SectionHeading eyebrow={h.indexEyebrow} title={h.indexTitle} body={`All ${count} projects, in portfolio order.`} dark />
         </div>
         <ProjectIndex projects={projects} />
       </section>
 
       <section className="overflow-hidden px-5 py-20 sm:px-8 lg:px-12">
         <div className="flex items-end justify-between gap-6">
-          <SectionHeading eyebrow="Visual rhythm" title="Selected spreads and objects." />
+          <SectionHeading eyebrow={h.rhythmEyebrow} title={h.rhythmTitle} />
           <Link
             className="hidden text-sm uppercase tracking-[0.1em] text-bone/70 transition-colors duration-200 hover:text-paper md:block"
             href="/work"
@@ -127,7 +128,7 @@ export default async function HomePage() {
       </section>
 
       {bioExcerpt ? (
-        <IntroBlock eyebrow="About" title={`About ${site.name}.`}>
+        <IntroBlock eyebrow={h.aboutEyebrow} title={`About ${site.name}.`}>
           <p>{bioExcerpt}</p>
           <Link
             className="mt-8 inline-flex border border-paper px-5 py-3 text-xs font-semibold uppercase tracking-exhibit transition-colors duration-200 hover:bg-paper hover:text-ink"
