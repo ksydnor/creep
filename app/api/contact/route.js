@@ -11,8 +11,9 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const lastSeen = new Map();
 const minIntervalMs = 30_000;
 
-function redirect(request, query) {
-  return Response.redirect(new URL(`/contact?${query}`, request.url), 303);
+// Relative Location: behind the reverse proxy request.url is the internal host.
+function redirect(_request, query) {
+  return new Response(null, { status: 303, headers: { location: `/contact?${query}` } });
 }
 
 export async function POST(request) {
