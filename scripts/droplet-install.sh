@@ -21,6 +21,10 @@ if ! command -v node >/dev/null; then
   curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
   apt-get install -y -q nodejs
 fi
+# The lockfile is written by npm 12; older npm rejects it under `npm ci`.
+if [ "$(npm -v | cut -d. -f1)" -lt 12 ]; then
+  npm install -g npm@12 --no-audit --no-fund
+fi
 
 if ! command -v caddy >/dev/null; then
   curl -1sLf https://dl.cloudsmith.io/public/caddy/stable/gpg.key | gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
@@ -59,7 +63,7 @@ fi
 cd "$APP_DIR"
 git config user.name "Pari Santani"
 git config user.email "editor@$DOMAIN"
-npm install --no-audit --no-fund
+npm ci --no-audit --no-fund
 npm run build
 
 cat > /etc/systemd/system/pari-portfolio.service <<UNIT
