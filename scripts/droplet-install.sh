@@ -144,7 +144,7 @@ filebeat.inputs:
   - type: journald
     id: pari-portfolio-app
     include_matches.match: ["_SYSTEMD_UNIT=pari-portfolio.service"]
-    fields: { app: pari-portfolio, stream: app }
+    fields: { service: { name: pari-portfolio }, stream: app }
     fields_under_root: true
     processors:
       - decode_json_fields:
@@ -156,7 +156,7 @@ filebeat.inputs:
     paths: ["/var/log/caddy/access.log"]
     parsers:
       - ndjson: { target: "caddy", add_error_key: true }
-    fields: { app: pari-portfolio, stream: http }
+    fields: { service: { name: pari-portfolio }, stream: http }
     fields_under_root: true
 processors:
   - add_host_metadata: ~
