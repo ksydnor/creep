@@ -1,8 +1,9 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { audit, clientIp } from "../../../lib/audit";
 
 // Each submission becomes one JSON file that the Keystatic "Messages"
-// collection lists. The folder is gitignored because the repo is public.
+// collection lists. The folder is never committed because the repo is public.
 const dir = path.join(process.cwd(), "content", "messages");
 const limits = { name: 200, email: 200, message: 4000 };
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -12,22 +13,32 @@ const lastSeen = new Map();
 const minIntervalMs = 30_000;
 
 // Relative Location: behind the reverse proxy request.url is the internal host.
-function redirect(_request, query) {
+function redirect(query) {
   return new Response(null, { status: 303, headers: { location: `/contact?${query}` } });
 }
 
 export async function POST(request) {
   const form = await request.formData();
   const fields = Object.fromEntries(Object.keys(limits).map((key) => [key, String(form.get(key) ?? "").trim()]));
+  const ip = clientIp(request);
+  const now = Date.now();
 
   // Honeypot filled or throttled: pretend it worked so bots learn nothing.
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "local";
-  const now = Date.now();
-  if (form.get("website") || now - (lastSeen.get(ip) ?? 0) < minIntervalMs) return redirect(request, "sent=1");
+  if (form.get("website")) {
+    audit("contact.dropped", { ip, reason: "honeypot" });
+    return redirect("sent=1");
+  }
+  if (now - (lastSeen.get(ip) ?? 0) < minIntervalMs) {
+    audit("contact.dropped", { ip, reason: "throttled" });
+    return redirect("sent=1");
+  }
 
   const valid =
     Object.entries(limits).every(([key, max]) => fields[key].length > 0 && fields[key].length <= max) && emailPattern.test(fields.email);
-  if (!valid) return redirect(request, "error=1");
+  if (!valid) {
+    audit("contact.rejected", { ip, reason: "invalid" });
+    return redirect("error=1");
+  }
 
   lastSeen.set(ip, now);
   const stamp = new Date(now).toISOString();
@@ -37,5 +48,6 @@ export async function POST(request) {
     path.join(dir, `${id}.json`),
     JSON.stringify({ receivedAt: stamp.slice(0, 16).replace("T", " ") + " UTC", ...fields, handled: false }, null, 2)
   );
-  return redirect(request, "sent=1");
+  audit("contact.received", { ip, id });
+  return redirect("sent=1");
 }
