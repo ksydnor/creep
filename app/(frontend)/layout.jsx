@@ -17,8 +17,9 @@ export async function generateMetadata() {
     openGraph: {
       title: site.title,
       description: site.description,
-      images: [site.heroImage]
-    }
+      images: [{ url: site.heroImage, alt: site.heroImageAlt }]
+    },
+    twitter: { card: "summary_large_image" }
   };
 }
 
