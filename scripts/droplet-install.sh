@@ -41,7 +41,18 @@ $DOMAIN {
 	basic_auth /api/keystatic* {
 		pari $HASH
 	}
-	reverse_proxy 127.0.0.1:3000
+	# JSON access log (who hit what, incl. user_id for editor logins); Filebeat ships it.
+	log {
+		output file /var/log/caddy/access.log {
+			roll_size 50mb
+			roll_keep 5
+		}
+		format json
+	}
+	reverse_proxy 127.0.0.1:3000 {
+		# The app records this in its editor audit events.
+		header_up X-Auth-User {http.auth.user.id}
+	}
 }
 www.$DOMAIN {
 	redir https://$DOMAIN{uri} permanent
@@ -113,5 +124,50 @@ WantedBy=timers.target
 UNIT
 systemctl daemon-reload
 systemctl enable --now pari-portfolio-backup.timer
+
+# Optional: ship the app journal (audit events as JSON lines) and the Caddy
+# access log to Elasticsearch. Set ELASTIC_URL (e.g. http://10.116.0.2:9200)
+# and ELASTIC_PASSWORD (user "elastic", or set ELASTIC_USER) to enable.
+if [ -n "${ELASTIC_URL:-}" ]; then
+  if ! command -v filebeat >/dev/null; then
+    curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | gpg --dearmor -o /usr/share/keyrings/elastic-keyring.gpg
+    echo "deb [signed-by=/usr/share/keyrings/elastic-keyring.gpg] https://artifacts.elastic.co/packages/9.x/apt stable main" > /etc/apt/sources.list.d/elastic-9.x.list
+    apt-get update -q && apt-get install -y -q filebeat
+  fi
+  cat > /etc/filebeat/filebeat.yml <<FILEBEAT
+filebeat.config.modules:
+  path: \${path.config}/modules.d/*.yml
+  reload.enabled: false
+filebeat.inputs:
+  # App stdout/stderr from systemd. Audit lines are JSON and land under audit.*.
+  - type: journald
+    id: pari-portfolio-app
+    include_matches.match: ["_SYSTEMD_UNIT=pari-portfolio.service"]
+    fields: { app: pari-portfolio, stream: app }
+    fields_under_root: true
+    processors:
+      - decode_json_fields:
+          fields: ["message"]
+          target: "audit"
+  # Caddy JSON access log: every request, with user_id for editor logins.
+  - type: filestream
+    id: pari-portfolio-http
+    paths: ["/var/log/caddy/access.log"]
+    parsers:
+      - ndjson: { target: "caddy", add_error_key: true }
+    fields: { app: pari-portfolio, stream: http }
+    fields_under_root: true
+processors:
+  - add_host_metadata: ~
+  - add_cloud_metadata: ~
+output.elasticsearch:
+  hosts: ["$ELASTIC_URL"]
+  username: "${ELASTIC_USER:-elastic}"
+  password: "${ELASTIC_PASSWORD:?set ELASTIC_PASSWORD when ELASTIC_URL is set}"
+FILEBEAT
+  chmod 600 /etc/filebeat/filebeat.yml
+  systemctl enable --now filebeat
+  systemctl restart filebeat
+fi
 
 echo "Done. Point $DOMAIN (and www) at this droplet. Editor: https://$DOMAIN/keystatic (user pari)."

@@ -38,7 +38,7 @@ DROPLET=root@<ip> scripts/deploy.sh
 
 It commits content edited on the server, pulls, rebuilds, restarts the service and pushes the content commit back.
 
-Logs: `journalctl -u pari-portfolio -f`. Change the editor password: rerun the install script, or edit `/etc/caddy/Caddyfile` with a new `caddy hash-password` and `systemctl reload caddy`.
+Logs: `journalctl -u pari-portfolio -f`. Audit events (editor saves with the files changed and the login user, contact-form outcomes) are JSON lines from `lib/audit.js` in that journal; Caddy writes a JSON access log to `/var/log/caddy/access.log`. With `ELASTIC_URL` and `ELASTIC_PASSWORD` passed to the install script, Filebeat ships both to Elasticsearch: filter on `app: pari-portfolio`, audit fields are under `audit.*`, HTTP fields under `caddy.*`. Change the editor password: rerun the install script, or edit `/etc/caddy/Caddyfile` with a new `caddy hash-password` and `systemctl reload caddy`.
 
 ## Editor documentation
 
