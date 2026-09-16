@@ -1,7 +1,7 @@
 import "./globals.css";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { getSiteSettings } from "@/lib/content";
+import { getNavPages, getSiteSettings } from "@/lib/content";
 import { archivo } from "@/lib/fonts";
 
 export async function generateMetadata() {
@@ -24,7 +24,7 @@ export async function generateMetadata() {
 }
 
 export default async function RootLayout({ children }) {
-  const site = await getSiteSettings();
+  const [site, pages] = await Promise.all([getSiteSettings(), getNavPages()]);
 
   return (
     <html className={archivo.variable} lang="en">
@@ -35,11 +35,11 @@ export default async function RootLayout({ children }) {
         >
           Skip to content
         </a>
-        <SiteHeader site={site} />
+        <SiteHeader pages={pages} site={site} />
         <div id="main" tabIndex={-1}>
           {children}
         </div>
-        <SiteFooter site={site} />
+        <SiteFooter pages={pages} site={site} />
       </body>
     </html>
   );

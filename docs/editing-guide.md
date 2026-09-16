@@ -2,10 +2,12 @@
 
 Everything on your site (projects, images, your bio, contact links) is edited in one place: `https://psantani.art/keystatic`. Bookmark it. The login is the username `pari` and the password you were given; if you lose it, ask me for a new one.
 
-## The two things you can edit
+## What you can edit
 
 - **Projects**: every project on the site, with its title, description, images, colour and order.
-- **Site**: everything else, including your name, bio, school, email, Instagram link, photo, CV and the homepage hero image.
+- **Pages**: extra pages you make yourself (a press kit, a CV page, a shop link page, anything). Each has a title, a one-line description, a **Show in the menu** tick with a menu position, and free-form content: headings, paragraphs, links, lists, images. The page lives at `psantani.art/<web-address>`.
+- **Site**: everything else, including your name, bio, school, email, Instagram link, photo, CV, the homepage hero image and the section headings.
+- **Messages** (under Inbox): everything sent through the contact form at `psantani.art/contact`, newest first. Open one to read it, reply from your own email, then tick **Replied / dealt with** and save, or delete it. Messages are stored only on the server, never published anywhere.
 
 ## Making a change
 

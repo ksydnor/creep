@@ -1,10 +1,12 @@
 import Link from "next/link";
 
-export function SiteFooter({ site }) {
+export function SiteFooter({ site, pages = [] }) {
   const domain = site.url.replace(/^https?:\/\//, "").replace(/\/+$/, "");
   const links = [
     { label: "Work", href: "/work", internal: true },
     { label: "About", href: "/about", internal: true },
+    ...pages.map((page) => ({ label: page.title, href: `/${page.slug}`, internal: true })),
+    { label: "Contact", href: "/contact", internal: true },
     site.email ? { label: site.email, href: `mailto:${site.email}`, plain: true } : null,
     site.socials?.instagram ? { label: "Instagram", href: site.socials.instagram } : null
   ].filter(Boolean);
@@ -17,14 +19,14 @@ export function SiteFooter({ site }) {
       <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-xs font-semibold uppercase tracking-exhibit text-bone/70">
         {links.map((link) =>
           link.internal ? (
-            <Link className="transition-colors duration-200 hover:text-paper" href={link.href} key={link.label}>
+            <Link className="transition-colors duration-200 hover:text-paper" href={link.href} key={link.href}>
               {link.label}
             </Link>
           ) : (
             <a
               className={`transition-colors duration-200 hover:text-paper ${link.plain ? "normal-case tracking-normal" : ""}`}
               href={link.href}
-              key={link.label}
+              key={link.href}
             >
               {link.label}
             </a>
