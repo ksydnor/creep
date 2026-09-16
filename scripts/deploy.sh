@@ -11,7 +11,8 @@ set -euo pipefail
 ssh "$DROPLET" bash -s <<'REMOTE'
 set -euo pipefail
 cd /opt/pari-portfolio
-git add content public/assets
+# content/messages holds contact-form submissions: never committed (public repo).
+git add -- content public/assets ':!content/messages'
 git commit -qm "Content edits" || true
 # ponytail: one branch, no conflict handling; if a code push and a content edit collide, resolve by hand here.
 git pull --rebase -q

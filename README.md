@@ -4,7 +4,8 @@ Editorial portfolio website for **Pari Santani** at [psantani.art](https://psant
 
 ## How content works
 
-- `content/projects/*.yaml`: one file per project. `content/site.yaml`: name, bio, contact links, hero image.
+- `content/projects/*.yaml`: one file per project. `content/pages/*.mdoc`: editor-made pages served at `/<slug>`. `content/site.yaml`: name, bio, contact links, hero image, section headings.
+- `content/messages/*.json`: contact-form submissions written by `app/api/contact`, shown in the editor under Inbox. Never committed: the repo is public. They are kept out by the deploy/backup pathspec and `.git/info/exclude` on the droplet (not `.gitignore`, which would hide them from the editor). Add the same exclude line locally if you test the form.
 - `public/assets/`: the images those files point at. Keystatic uploads land here too.
 - `keystatic.config.js` defines the fields. `lib/content.js` reads them (Keystatic reader) and hands components the same objects they always used; nothing else touches the files.
 - Pages revalidate every minute, so an edit saved in `/keystatic` is live within a minute, no rebuild.

@@ -41,8 +41,44 @@ const headings = fields.object(
 
 export default config({
   storage: { kind: "local" },
-  ui: { brand: { name: "Pari Santani", mark: () => createElement("img", { src: "/icon.svg", alt: "", width: 24, height: 24 }) } },
+  ui: {
+    brand: { name: "Pari Santani", mark: () => createElement("img", { src: "/icon.svg", alt: "", width: 24, height: 24 }) },
+    navigation: { Content: ["projects", "pages", "site"], Inbox: ["messages"] }
+  },
   collections: {
+    pages: collection({
+      label: "Pages",
+      path: "content/pages/*",
+      slugField: "title",
+      format: { contentField: "body" },
+      columns: ["showInNav", "navOrder"],
+      previewUrl: "/{slug}",
+      schema: {
+        title: fields.slug({ name: { label: "Page title" }, slug: { label: "Web address", description: "The end of the URL: press-kit becomes /press-kit." } }),
+        description: fields.text({ label: "Description", description: "One sentence for search engines and link previews.", multiline: true }),
+        showInNav: fields.checkbox({ label: "Show in the menu" }),
+        navOrder: fields.integer({ label: "Menu position", description: "1 is first, after Work and About.", defaultValue: 1 }),
+        body: fields.markdoc({
+          label: "Content",
+          options: { image: { directory: "public/assets/pages", publicPath: "/assets/pages/" } }
+        })
+      }
+    }),
+    // Written by app/api/contact, read here. The files are gitignored: the repo is public.
+    messages: collection({
+      label: "Messages",
+      path: "content/messages/*",
+      slugField: "receivedAt",
+      format: { data: "json" },
+      columns: ["name", "email", "handled"],
+      schema: {
+        receivedAt: fields.slug({ name: { label: "Received" } }),
+        name: fields.text({ label: "Name" }),
+        email: fields.text({ label: "Email" }),
+        message: fields.text({ label: "Message", multiline: true }),
+        handled: fields.checkbox({ label: "Replied / dealt with" })
+      }
+    }),
     projects: collection({
       label: "Projects",
       path: "content/projects/*",

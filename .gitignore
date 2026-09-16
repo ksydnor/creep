@@ -1,5 +1,8 @@
 .next/
 node_modules/
+# content/messages/ (contact form submissions) is deliberately NOT listed here:
+# the editor hides gitignored files. It is kept out of git by the deploy and
+# backup scripts' pathspec and by .git/info/exclude on the droplet.
 content.db*
 media/
 out/

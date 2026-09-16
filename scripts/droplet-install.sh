@@ -63,6 +63,9 @@ fi
 cd "$APP_DIR"
 git config user.name "Pari Santani"
 git config user.email "editor@$DOMAIN"
+# Contact-form submissions stay on this machine. Excluded here rather than in
+# .gitignore because the editor hides gitignored files.
+grep -qx "content/messages/" .git/info/exclude || echo "content/messages/" >> .git/info/exclude
 npm ci --no-audit --no-fund
 npm run build
 
@@ -94,7 +97,7 @@ Description=Push content edited in /keystatic to git
 [Service]
 Type=oneshot
 WorkingDirectory=$APP_DIR
-ExecStart=/bin/sh -c 'git add content public/assets && (git commit -qm "Content edits" || true) && git push -q'
+ExecStart=/bin/sh -c 'git add -- content public/assets ":!content/messages" && (git commit -qm "Content edits" || true) && git push -q'
 UNIT
 cat > /etc/systemd/system/pari-portfolio-backup.timer <<UNIT
 [Unit]
