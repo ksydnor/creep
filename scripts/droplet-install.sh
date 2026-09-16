@@ -59,7 +59,7 @@ fi
 cd "$APP_DIR"
 git config user.name "Pari Santani"
 git config user.email "editor@$DOMAIN"
-npm ci --no-audit --no-fund
+npm install --no-audit --no-fund
 npm run build
 
 cat > /etc/systemd/system/pari-portfolio.service <<UNIT

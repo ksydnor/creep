@@ -15,7 +15,7 @@ git add content public/assets
 git commit -qm "Content edits" || true
 # ponytail: one branch, no conflict handling; if a code push and a content edit collide, resolve by hand here.
 git pull --rebase -q
-npm ci --no-audit --no-fund
+npm install --no-audit --no-fund
 npm run build
 systemctl restart pari-portfolio
 git push -q
