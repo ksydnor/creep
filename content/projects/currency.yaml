@@ -1,0 +1,46 @@
+title: Mothville Currency
+order: 6
+category: Currency / Illustration
+course: Process & Production
+year: '2026'
+tools:
+  - Adobe Illustrator
+featured: true
+accent: '#ffb3d8'
+shortDescription: Three banknotes for the Central Republic of Mothville, each carrying a different moth.
+longDescription: 'A currency for Process & Production, drawn in Illustrator. Three notes for the Central Republic of Mothville: a 10, a 50 and a 100 in blue, pink and green. Each front carries a different moth over a fine-line ground with a star, a seal and a serial number; each back repeats the moth in reverse with a signature. The notes were printed and photographed.'
+moduleEyebrow: One set
+moduleTitle: Three notes, three moths.
+moduleBody: The star, the seal and the serial repeat across the set. The moth and the colour change.
+coverImage:
+  image: /assets/projects/currency/web-notes-1.jpg
+  alt: The 10, 50 and 100 notes fanned out on a white surface.
+thumbnail: /assets/projects/currency/web-note-50.jpg
+thumbnailAlt: The pink 50 note, front and back, with a wide-winged moth.
+gallery:
+  - image: /assets/projects/currency/web-notes-1.jpg
+    alt: The 10, 50 and 100 notes fanned out on a white surface.
+    caption: Currency / the set 01
+  - image: /assets/projects/currency/web-notes-2.jpg
+    alt: The blue 10, green 100 and pink 50 notes overlapping, the 50 on top.
+    caption: Currency / the set 02
+  - image: /assets/projects/currency/web-note-10.jpg
+    alt: The blue 10 note, front and back, with a dark, white-veined moth.
+    caption: Currency / 10
+  - image: /assets/projects/currency/web-note-50.jpg
+    alt: The pink 50 note, front and back, with a wide-winged moth.
+    caption: Currency / 50
+  - image: /assets/projects/currency/web-note-100.jpg
+    alt: The green 100 note, front and back, with a hawk moth.
+    caption: Currency / 100
+sections:
+  - title: The set
+    body: The 10, the 50 and the 100 together.
+    image: /assets/projects/currency/web-notes-1.jpg
+    alt: The 10, 50 and 100 notes fanned out on a white surface.
+  - title: Front and back
+    body: Each note printed on both sides.
+    image: /assets/projects/currency/web-note-100.jpg
+    alt: The green 100 note, front and back, with a hawk moth.
+tone: light
+layout: grid

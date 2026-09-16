@@ -23,9 +23,6 @@
       "@/*": [
         "./*"
       ],
-      "@payload-config": [
-        "./payload.config.js"
-      ]
     },
     "plugins": [
       {

@@ -8,10 +8,8 @@ export default async function robots() {
     rules: [
       {
         userAgent: "*",
-        // Uploaded images are served under /api, so that path stays crawlable
-        // while the admin and the rest of the REST surface do not.
-        allow: ["/", "/api/media/file/"],
-        disallow: ["/admin", "/api"]
+        allow: "/",
+        disallow: ["/keystatic", "/api"]
       }
     ],
     sitemap: `${base}/sitemap.xml`

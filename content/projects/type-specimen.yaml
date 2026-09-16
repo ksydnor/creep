@@ -1,0 +1,85 @@
+title: Type Specimen
+order: 2
+category: Typography
+course: Typography + Info
+year: '2026'
+tools:
+  - Adobe Illustrator
+  - Clay
+  - Photography
+featured: true
+accent: '#d758b3'
+shortDescription: A specimen for Alternate Gothic that starts from a lowercase g modelled in clay.
+longDescription: 'A type specimen for Alternate Gothic, made for Typography + Info. It started with one letter: I modelled the lowercase g in clay, photographed it, and drew from it in Illustrator. Those drawings became a set of black and white pattern studies, then a run of black and white magazine pages, and finally the specimen itself: a teen-magazine issue set entirely in Alternate Gothic, in pink, green and magenta.'
+moduleEyebrow: One letter first
+moduleTitle: The g, in clay and in ink.
+moduleBody: The clay g was photographed and drawn before any page was set. The finished pages are the only part of the project in colour.
+coverImage:
+  image: /assets/projects/type-specimen/web-specimen-1.jpg
+  alt: 'Specimen page: a giant lime-green ampersand on pink, with a magenta and a yellow exclamation mark.'
+thumbnail: /assets/projects/type-specimen/web-clay-1.jpg
+thumbnailAlt: Photograph of a lowercase g modelled in grey clay.
+gallery:
+  - image: /assets/projects/type-specimen/web-specimen-1.jpg
+    alt: 'Specimen page: a giant lime-green ampersand on pink, with a magenta and a yellow exclamation mark.'
+    caption: Type Specimen / page 01
+  - image: /assets/projects/type-specimen/web-specimen-2.jpg
+    alt: 'Specimen page: magazine cover lines in Alternate Gothic on magenta and green.'
+    caption: Type Specimen / page 02
+  - image: /assets/projects/type-specimen/web-specimen-3.jpg
+    alt: 'Specimen page: the words smashing in pink in dark maroon and pale pink on magenta, under white glyphs on lime green.'
+    caption: Type Specimen / page 03
+  - image: /assets/projects/type-specimen/web-specimen-4.jpg
+    alt: 'Specimen page: numerals and the word crushes stacked in pink, green and yellow.'
+    caption: Type Specimen / page 04
+  - image: /assets/projects/type-specimen/web-specimen-5.jpg
+    alt: 'Specimen page: sip the gossip drink till you choke, set inside a pink capsule.'
+    caption: Type Specimen / page 05
+  - image: /assets/projects/type-specimen/web-specimen-6.jpg
+    alt: 'Specimen page: the character set and cover lines in yellow, magenta and pink.'
+    caption: Type Specimen / page 06
+  - image: /assets/projects/type-specimen/web-clay-1.jpg
+    alt: Photograph of a lowercase g modelled in grey clay.
+    caption: Type Specimen / clay g 01
+  - image: /assets/projects/type-specimen/web-clay-2.jpg
+    alt: Clay g photographed over its drawn outline.
+    caption: Type Specimen / clay g 02
+  - image: /assets/projects/type-specimen/web-clay-3.jpg
+    alt: Clay g rings repeated across a white ground.
+    caption: Type Specimen / clay g 03
+  - image: /assets/projects/type-specimen/web-g-1.jpg
+    alt: Drawn g outlines nested inside capsule shapes.
+    caption: Type Specimen / g study 01
+  - image: /assets/projects/type-specimen/web-g-2.jpg
+    alt: Two drawn g shapes mirrored in black.
+    caption: Type Specimen / g study 02
+  - image: /assets/projects/type-specimen/web-g-3.jpg
+    alt: Overlapping black g shapes cut into a pattern.
+    caption: Type Specimen / g study 03
+  - image: /assets/projects/type-specimen/web-g-4.jpg
+    alt: Thin outline g shapes scattered across the page.
+    caption: Type Specimen / g study 04
+  - image: /assets/projects/type-specimen/web-bw-1.jpg
+    alt: 'Black and white magazine page: teen party, teen fashion.'
+    caption: Type Specimen / black and white 01
+  - image: /assets/projects/type-specimen/web-bw-2.jpg
+    alt: Black and white page listing the Alternate Gothic weights from thin to black.
+    caption: Type Specimen / black and white 02
+  - image: /assets/projects/type-specimen/web-bw-3.jpg
+    alt: 'Black and white page: a grey ampersand and exclamation mark.'
+    caption: Type Specimen / black and white 03
+sections:
+  - title: Clay g
+    body: The lowercase g, built by hand and photographed.
+    image: /assets/projects/type-specimen/web-clay-1.jpg
+    alt: Photograph of a lowercase g modelled in grey clay.
+  - title: Pattern studies
+    body: The g drawn in Illustrator, repeated and cut into black and white patterns.
+    image: /assets/projects/type-specimen/web-g-1.jpg
+    alt: Drawn g outlines nested inside capsule shapes.
+  - title: Final specimen
+    body: Six magazine pages in pink, green and magenta.
+    image: /assets/projects/type-specimen/web-specimen-2.jpg
+    alt: 'Specimen page: magazine cover lines in Alternate Gothic on magenta and green.'
+tone: dark
+layout: grid

@@ -1,0 +1,67 @@
+title: Monster Deck
+order: 5
+category: Playing cards
+course: Process & Production
+year: '2026'
+tools:
+  - Adobe Illustrator
+featured: false
+accent: '#80ff72'
+shortDescription: A printed deck of playing cards with a different monster drawn on every face.
+longDescription: A deck of playing cards for Process & Production, drawn in Illustrator. Each card carries its own creature in black line over cream, red or purple, with the rank and suit in the corners. The back is a field of eyes. The deck was printed and boxed; the photographs show the finished cards.
+moduleEyebrow: Deck
+moduleTitle: A monster on every face.
+moduleBody: 'Black line on three colours: cream, red and purple. The back is nothing but eyes.'
+coverImage:
+  image: /assets/projects/monster-deck/web-deck-1.jpg
+  alt: Printed cards fanned out over a purple card and the black box of the deck.
+thumbnail: /assets/projects/monster-deck/web-card-king-spades.jpg
+thumbnailAlt: 'King of spades: a horned creature drawn in black line on purple.'
+gallery:
+  - image: /assets/projects/monster-deck/web-deck-1.jpg
+    alt: Printed cards fanned out over a purple card and the black box of the deck.
+    caption: Monster Deck / printed deck 01
+  - image: /assets/projects/monster-deck/web-deck-2.jpg
+    alt: A stack of printed cards with the eye-pattern back on top.
+    caption: Monster Deck / printed deck 02
+  - image: /assets/projects/monster-deck/web-deck-3.jpg
+    alt: The open box with cards spilling out.
+    caption: Monster Deck / printed deck 03
+  - image: /assets/projects/monster-deck/web-box.jpg
+    alt: The closed black box of the deck.
+    caption: Monster Deck / box
+  - image: /assets/projects/monster-deck/web-card-back.jpg
+    alt: 'Card back: a dense pattern of eyes in black and cream.'
+    caption: Monster Deck / back
+  - image: /assets/projects/monster-deck/web-card-jack-hearts.jpg
+    alt: 'Jack of hearts: a winged creature drawn in black line on red.'
+    caption: Monster Deck / jack of hearts
+  - image: /assets/projects/monster-deck/web-card-joker.jpg
+    alt: 'Joker: a horned face inside a folded wing, black line on cream.'
+    caption: Monster Deck / joker
+  - image: /assets/projects/monster-deck/web-card-king-spades.jpg
+    alt: 'King of spades: a horned creature drawn in black line on purple.'
+    caption: Monster Deck / king of spades
+  - image: /assets/projects/monster-deck/web-card-ace-clubs.jpg
+    alt: 'Ace of clubs: a hunched figure with a purple club.'
+    caption: Monster Deck / ace of clubs
+  - image: /assets/projects/monster-deck/web-card-queen-diamonds.jpg
+    alt: 'Queen of diamonds: a creature with wide antlers on red.'
+    caption: Monster Deck / queen of diamonds
+  - image: /assets/projects/monster-deck/web-card-three-diamonds.jpg
+    alt: 'Three of diamonds: a bald figure with clawed hands on cream.'
+    caption: Monster Deck / three of diamonds
+  - image: /assets/projects/monster-deck/web-card-seven-spades.jpg
+    alt: 'Seven of spades: a tangle of tentacles in purple on cream.'
+    caption: Monster Deck / seven of spades
+sections:
+  - title: Card faces
+    body: Each face drawn separately in Illustrator.
+    image: /assets/projects/monster-deck/web-card-king-spades.jpg
+    alt: 'King of spades: a horned creature drawn in black line on purple.'
+  - title: Printed deck
+    body: The cards and the box after printing.
+    image: /assets/projects/monster-deck/web-deck-3.jpg
+    alt: The open box with cards spilling out.
+tone: dark
+layout: object

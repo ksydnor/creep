@@ -1,0 +1,50 @@
+title: Lenny's Cookbook
+order: 7
+category: Editorial / Print
+course: Process & Production
+year: '2026'
+tools:
+  - Adobe Illustrator
+  - Adobe InDesign
+featured: false
+accent: '#ffc857'
+shortDescription: A Mediterranean cookbook set in InDesign and illustrated with one red octopus that reaches through every page.
+longDescription: 'A cookbook for Process & Production. Lenny''s Cookbook collects Mediterranean recipes, set in InDesign and illustrated in Illustrator. One octopus is the only illustration: reversed out in white, it wraps the cover; inside, in red, it holds the bowls and reaches across the recipe pages. Each recipe carries hand-drawn icons for cooking time and serving size. The book was printed and photographed.'
+moduleEyebrow: Spreads
+moduleTitle: One octopus, every page.
+moduleBody: Recipes on the left, the octopus on the right, hand-drawn timers and forks in between.
+coverImage:
+  image: /assets/projects/cookbook/web-spread.jpg
+  alt: The printed cookbook open to the Ezme recipe, with an octopus curled around a bowl of salad.
+thumbnail: /assets/projects/cookbook/web-cover.jpg
+thumbnailAlt: 'The printed cookbook cover: a white octopus on dark red.'
+gallery:
+  - image: /assets/projects/cookbook/web-cover.jpg
+    alt: 'The printed cookbook cover: a white octopus on dark red.'
+    caption: Cookbook / cover
+  - image: /assets/projects/cookbook/web-spread.jpg
+    alt: The printed cookbook open to the Ezme recipe, with an octopus curled around a bowl of salad.
+    caption: Cookbook / spread
+  - image: /assets/projects/cookbook/web-page-1.jpg
+    alt: 'Recipe page: Ezme instructions with a timer, serves 4 and the words so fresh.'
+    caption: Cookbook / page 01
+  - image: /assets/projects/cookbook/web-page-2.jpg
+    alt: 'Recipe page: Ezme Turkish salad ingredients, with octopus arms down the left.'
+    caption: Cookbook / page 02
+  - image: /assets/projects/cookbook/web-page-3.jpg
+    alt: 'Recipe page: Toum garlic sauce with a bowl of the sauce at the top.'
+    caption: Cookbook / page 03
+  - image: /assets/projects/cookbook/web-page-4.jpg
+    alt: 'Recipe page: cooking time and serving icons surrounded by octopus arms.'
+    caption: Cookbook / page 04
+sections:
+  - title: Recipe pages
+    body: Ezme, toum and the rest, set with hand-drawn icons.
+    image: /assets/projects/cookbook/web-page-2.jpg
+    alt: 'Recipe page: Ezme Turkish salad ingredients, with octopus arms down the left.'
+  - title: The printed book
+    body: Cover and spread, after printing.
+    image: /assets/projects/cookbook/web-cover.jpg
+    alt: 'The printed cookbook cover: a white octopus on dark red.'
+tone: light
+layout: grid

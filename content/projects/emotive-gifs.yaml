@@ -1,0 +1,55 @@
+title: Emotive GIFs
+order: 1
+category: Animated GIFs
+course: Dynamic Imagery
+year: '2026'
+tools:
+  - Adobe Photoshop
+featured: false
+accent: '#f7d64a'
+shortDescription: Eight looping GIFs of one character, one for each emotion, made in Photoshop.
+longDescription: 'Eight GIFs for Dynamic Imagery: anger, confusion, excitement, sadness, fear, disgust, joy and surprise. One character carries all eight. Every loop keeps the same framing, so the emotion has to come from the eyes, the brows and the posture. The stills here are single frames from each loop; the finished pieces move.'
+moduleEyebrow: Eight emotions
+moduleTitle: One character, eight readings.
+moduleBody: Same framing every time. Anger folds its arms; the rest is done with the eyes and the brows.
+coverImage:
+  image: /assets/projects/emotive-gifs/web-gif-anger.jpg
+  alt: A long-eared creature in a green sweater with its arms folded, the still for anger.
+thumbnail: /assets/projects/emotive-gifs/web-gif-surprise.jpg
+thumbnailAlt: The same creature with wide round eyes and raised brows, the still for surprise.
+gallery:
+  - image: /assets/projects/emotive-gifs/web-gif-anger.jpg
+    alt: 'Still for anger: arms folded, brows down.'
+    caption: Emotive GIFs / anger
+  - image: /assets/projects/emotive-gifs/web-gif-confusion.jpg
+    alt: 'Still for confusion: eyes off to one side, one brow raised.'
+    caption: Emotive GIFs / confusion
+  - image: /assets/projects/emotive-gifs/web-gif-excitement.jpg
+    alt: 'Still for excitement: eyes wide, brows lifted.'
+    caption: Emotive GIFs / excitement
+  - image: /assets/projects/emotive-gifs/web-gif-sadness.jpg
+    alt: 'Still for sadness: eyelids half closed.'
+    caption: Emotive GIFs / sadness
+  - image: /assets/projects/emotive-gifs/web-gif-fear.jpg
+    alt: 'Still for fear: brows pinched up, eyes wide.'
+    caption: Emotive GIFs / fear
+  - image: /assets/projects/emotive-gifs/web-gif-disgust.jpg
+    alt: 'Still for disgust: eyes turned away, brows knotted.'
+    caption: Emotive GIFs / disgust
+  - image: /assets/projects/emotive-gifs/web-gif-joy.jpg
+    alt: 'Still for joy: eyes wide, brows lifted, head tilted.'
+    caption: Emotive GIFs / joy
+  - image: /assets/projects/emotive-gifs/web-gif-surprise.jpg
+    alt: 'Still for surprise: round eyes, brows raised.'
+    caption: Emotive GIFs / surprise
+sections:
+  - title: First four
+    body: Anger, confusion, excitement and sadness.
+    image: /assets/projects/emotive-gifs/web-gif-anger.jpg
+    alt: 'Still for anger: arms folded, brows down.'
+  - title: Second four
+    body: Fear, disgust, joy and surprise.
+    image: /assets/projects/emotive-gifs/web-gif-fear.jpg
+    alt: 'Still for fear: brows pinched up, eyes wide.'
+tone: dark
+layout: grid

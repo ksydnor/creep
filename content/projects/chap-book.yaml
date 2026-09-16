@@ -1,0 +1,56 @@
+title: Notes from Underground
+order: 3
+category: Editorial / Print
+course: Typography + Info
+year: '2026'
+tools:
+  - Adobe InDesign
+  - Adobe Illustrator
+featured: true
+accent: '#e42525'
+shortDescription: A chap book of Dostoyevsky's Notes from Underground, typeset in InDesign with artwork made in Illustrator.
+longDescription: 'A chap book for Typography + Info, setting Fyodor Dostoyevsky''s Notes from Underground. The text was set first as a plain exercise called Invisible: two spreads where the typography stays out of the way. The finished book breaks that setting open. A second voice cuts across the prose in red and black, letters run off the page, and the type becomes part of the picture.'
+moduleEyebrow: Setting, then book
+moduleTitle: Invisible, then loud.
+moduleBody: The first two spreads set the text quietly. The finished book lets a second voice in red run across it.
+coverImage:
+  image: /assets/projects/chap-book/web-spread-1.jpg
+  alt: 'Chap book spread: a huge black G, the words goodbye in red and wait and bleed repeated in black.'
+thumbnail: /assets/projects/chap-book/web-spread-4.jpg
+thumbnailAlt: 'Chap book spread: a black burst shape holding the line inside my shell I wait and bleed.'
+gallery:
+  - image: /assets/projects/chap-book/web-book-cover.jpg
+    alt: 'Chap book cover: Notes from Underground in white on black with thin red stripes.'
+    caption: Chap Book / cover
+  - image: /assets/projects/chap-book/web-spread-1.jpg
+    alt: 'Chap book spread: a huge black G, the words goodbye in red and wait and bleed repeated in black.'
+    caption: Chap Book / spread 01
+  - image: /assets/projects/chap-book/web-spread-2.jpg
+    alt: 'Chap book spread: the prose with a red wall of tilted lettering across the right page.'
+    caption: Chap Book / spread 02
+  - image: /assets/projects/chap-book/web-spread-3.jpg
+    alt: 'Chap book spread: giant black letters behind the columns, with wait and bleed in red.'
+    caption: Chap Book / spread 03
+  - image: /assets/projects/chap-book/web-spread-4.jpg
+    alt: 'Chap book spread: a black burst shape holding the line inside my shell I wait and bleed.'
+    caption: Chap Book / spread 04
+  - image: /assets/projects/chap-book/web-spread-5.jpg
+    alt: 'Chap book spread: black bars over the text with a line of red at the top of the right page.'
+    caption: Chap Book / spread 05
+  - image: /assets/projects/chap-book/web-invisible-1.jpg
+    alt: 'Invisible type set: two pages of plain justified text.'
+    caption: Chap Book / Invisible 01
+  - image: /assets/projects/chap-book/web-invisible-2.jpg
+    alt: 'Invisible type set: two more pages of plain justified text.'
+    caption: Chap Book / Invisible 02
+sections:
+  - title: Invisible
+    body: The text set plainly, before any image.
+    image: /assets/projects/chap-book/web-invisible-1.jpg
+    alt: 'Invisible type set: two pages of plain justified text.'
+  - title: The book
+    body: Red and black spreads from the printed copy.
+    image: /assets/projects/chap-book/web-spread-3.jpg
+    alt: 'Chap book spread: giant black letters behind the columns, with wait and bleed in red.'
+tone: dark
+layout: grid

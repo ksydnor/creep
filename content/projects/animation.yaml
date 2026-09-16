@@ -1,0 +1,68 @@
+title: First Scene
+order: 4
+category: Animation / 3D
+course: Digital Prototyping
+year: '2026'
+tools:
+  - Procreate
+  - Blender
+  - Adobe After Effects
+  - Adobe Photoshop
+featured: false
+accent: '#ff4f2e'
+shortDescription: 'The opening scene of an animation: storyboarded in Procreate, an eye modelled in Blender, composited in After Effects.'
+longDescription: 'The first scene of an animation, made for Digital Prototyping. The storyboard is six frames in Procreate: a clown in striped socks walks into a spotlight while a wall of mechanical eyes follows him. The eye was modelled and rendered in Blender so it could be turned and lit from any angle. The scene was assembled in After Effects with painted elements from Procreate and Photoshop.'
+moduleEyebrow: Three stages
+moduleTitle: Board, eye, scene.
+moduleBody: Six frames set the action. The eye was built once in Blender and reused for every angle.
+coverImage:
+  image: /assets/projects/animation/web-scene.jpg
+  alt: 'Finished frame: striped socks and olive sneakers with orange laces on a wooden floor under a red light.'
+thumbnail: /assets/projects/animation/web-object-1.jpg
+thumbnailAlt: Blender render of a pink eyeball held on a jointed metal stand.
+gallery:
+  - image: /assets/projects/animation/web-scene.jpg
+    alt: 'Finished frame: striped socks and olive sneakers with orange laces on a wooden floor under a red light.'
+    caption: Animation / first scene
+  - image: /assets/projects/animation/web-storyboard-1.jpg
+    alt: 'Storyboard frame 1: red shoes stepping forward, shoes clicking.'
+    caption: Animation / storyboard 01
+  - image: /assets/projects/animation/web-storyboard-2.jpg
+    alt: 'Storyboard frame 2: a red-haired clown beside a crowd of eyes.'
+    caption: Animation / storyboard 02
+  - image: /assets/projects/animation/web-storyboard-3.jpg
+    alt: 'Storyboard frame 3: rows of mechanical eyes, eyes follow the clown.'
+    caption: Animation / storyboard 03
+  - image: /assets/projects/animation/web-storyboard-4.jpg
+    alt: 'Storyboard frame 4: the eyes turn together.'
+    caption: Animation / storyboard 04
+  - image: /assets/projects/animation/web-storyboard-5.jpg
+    alt: 'Storyboard frame 5: the clown in profile, walks out of frame.'
+    caption: Animation / storyboard 05
+  - image: /assets/projects/animation/web-storyboard-6.jpg
+    alt: 'Storyboard frame 6: a figure in a spotlight between red stage curtains.'
+    caption: Animation / storyboard 06
+  - image: /assets/projects/animation/web-object-1.jpg
+    alt: Blender render of a pink eyeball held on a jointed metal stand.
+    caption: Animation / Blender eye 01
+  - image: /assets/projects/animation/web-object-2.jpg
+    alt: Blender render of the eye from the side, held in a hexagonal frame.
+    caption: Animation / Blender eye 02
+  - image: /assets/projects/animation/web-object-3.jpg
+    alt: Blender render of the eye looking down from the top of its stand.
+    caption: Animation / Blender eye 03
+sections:
+  - title: Storyboard
+    body: Six frames in Procreate, from the first step to the stage.
+    image: /assets/projects/animation/web-storyboard-3.jpg
+    alt: 'Storyboard frame 3: rows of mechanical eyes, eyes follow the clown.'
+  - title: 3D object
+    body: The eye, modelled and rendered in Blender.
+    image: /assets/projects/animation/web-object-2.jpg
+    alt: Blender render of the eye from the side, held in a hexagonal frame.
+  - title: First scene
+    body: The finished opening frame, composited in After Effects.
+    image: /assets/projects/animation/web-scene.jpg
+    alt: 'Finished frame: striped socks and olive sneakers with orange laces on a wooden floor under a red light.'
+tone: dark
+layout: progression

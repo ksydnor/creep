@@ -15,4 +15,3 @@ yarn-error.log*
 pnpm-debug.log*
 .next-dev*.log
 .vscode/
-payload-types.ts

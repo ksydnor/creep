@@ -1,0 +1,57 @@
+title: When Dreams Turn on Us
+order: 8
+category: Posters / Exhibition
+course: Research, Analysis & Process
+year: '2026'
+tools:
+  - Procreate
+  - Adobe Photoshop
+featured: false
+accent: '#e64b3c'
+shortDescription: Three posters for an exhibition on dreams and nightmares, built from four paintings made as research.
+longDescription: 'Three posters for Research, Analysis & Process. The research came first, as four paintings in Procreate: two nightmares, a scratched black and white room with something at the window and a girl asleep on a bed with impossibly tall legs, and two dreams, an open mouth full of teeth in pink and green and a pair of clasped hands. The posters were composed in Photoshop from those paintings and from photographed hands. Each one is vertical, gives the image most of the sheet, and carries one line of rough, distressed type: Are you dreaming right now? The absurd awaits your sleep. When dreams turn on us.'
+moduleEyebrow: Research first
+moduleTitle: Paint it, then set it.
+moduleBody: The nightmare and the dream were painted before a single poster was laid out.
+coverImage:
+  image: /assets/projects/exhibition-posters/web-dream-1.jpg
+  alt: 'Dream painting: an open mouth full of teeth in pink, green and purple.'
+thumbnail: /assets/projects/exhibition-posters/web-poster-3.jpg
+thumbnailAlt: 'Poster: a girl asleep on a bed with impossibly tall legs, with the line when dreams turn on us.'
+gallery:
+  - image: /assets/projects/exhibition-posters/web-poster-1.jpg
+    alt: 'Poster: two reaching hands over a dark pattern, with the line are you dreaming right now.'
+    caption: Exhibition Posters / poster 01
+  - image: /assets/projects/exhibition-posters/web-poster-2.jpg
+    alt: 'Poster: teeth and a purple mouth in greyscale, with the line the absurd awaits your sleep.'
+    caption: Exhibition Posters / poster 02
+  - image: /assets/projects/exhibition-posters/web-poster-3.jpg
+    alt: 'Poster: a girl asleep on a bed with impossibly tall legs, with the line when dreams turn on us.'
+    caption: Exhibition Posters / poster 03
+  - image: /assets/projects/exhibition-posters/web-nightmare-1.jpg
+    alt: 'Nightmare painting: a scratched black and white room with a creature at the window.'
+    caption: Exhibition Posters / nightmare research 01
+  - image: /assets/projects/exhibition-posters/web-nightmare-2.jpg
+    alt: 'Nightmare painting: a girl lying on a bed with very tall legs, in black line on white.'
+    caption: Exhibition Posters / nightmare research 02
+  - image: /assets/projects/exhibition-posters/web-dream-1.jpg
+    alt: 'Dream painting: an open mouth full of teeth in pink, green and purple.'
+    caption: Exhibition Posters / dream research 01
+  - image: /assets/projects/exhibition-posters/web-dream-2.jpg
+    alt: 'Dream painting: two hands clasped in black line with a grey wash and small red marks.'
+    caption: Exhibition Posters / dream research 02
+sections:
+  - title: Nightmare
+    body: Painted in Procreate during the research stage.
+    image: /assets/projects/exhibition-posters/web-nightmare-1.jpg
+    alt: 'Nightmare painting: a scratched black and white room with a creature at the window.'
+  - title: Dream
+    body: The other half of the research, also painted in Procreate.
+    image: /assets/projects/exhibition-posters/web-dream-1.jpg
+    alt: 'Dream painting: an open mouth full of teeth in pink, green and purple.'
+  - title: Posters
+    body: Three vertical posters, composed in Photoshop.
+    image: /assets/projects/exhibition-posters/web-poster-1.jpg
+    alt: 'Poster: two reaching hands over a dark pattern, with the line are you dreaming right now.'
+tone: dark
+layout: poster
