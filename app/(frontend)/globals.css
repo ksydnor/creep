@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: var(--font-archivo);
+  --font-sans: var(--font-archivo);
+  --accent: #ff3b1f;
+  color-scheme: dark;
+}
+
+@layer components {
+  /* Display type is the condensed cut of the same family; body copy stays at full width. */
+  .font-display {
+    font-stretch: 68%;
+    font-weight: 800;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Clears the fixed header when focus or an anchor scrolls something into view. */
+  scroll-padding-top: 5rem;
+  background: #080808;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #080808;
+  color: #f5f0e8;
+  font-family: var(--font-sans), Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--accent);
+  color: #080808;
+}
+
+:focus-visible {
+  /* Fixed colour rather than the per-project accent, so an editor cannot pick one that hides the ring. */
+  outline: 2px solid #ff3b1f;
+  outline-offset: 4px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-rise {
+  animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.grid-rules {
+  position: relative;
+}
+
+.grid-rules::after {
+  background-image: repeating-linear-gradient(90deg, rgba(245, 240, 232, 0.08) 0 1px, transparent 1px calc(100% / 6));
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.portfolio-scrollbar {
+  scrollbar-color: rgba(245, 240, 232, 0.72) rgba(245, 240, 232, 0.12);
+  scrollbar-width: thin;
+}
+
+.portfolio-scrollbar::-webkit-scrollbar {
+  height: 12px;
+}
+
+.portfolio-scrollbar::-webkit-scrollbar-track {
+  background: rgba(245, 240, 232, 0.1);
+  border: 1px solid rgba(245, 240, 232, 0.12);
+}
+
+.portfolio-scrollbar::-webkit-scrollbar-thumb {
+  background: #b7b0a6;
+  border: 3px solid #080808;
+}
+
+.portfolio-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #f5f0e8;
+}

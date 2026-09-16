@@ -1,0 +1,17 @@
+export const site = {
+  name: "Pari Santani",
+  url: "https://psantani.art",
+  title: "Pari Santani - Portfolio",
+  subtitle: "Typography / Print / Animation",
+  eyebrow: "Selected work 2026",
+  description:
+    "Portfolio of Pari Santani, a design student: a type specimen, printed books, playing cards, currency, posters, GIFs and animation.",
+  statement:
+    "Eight projects from my second year of design school. Most of it is print: a type specimen, a chap book, a deck of cards, a currency and a cookbook. The rest moves or hangs on a wall: eight emotive GIFs, three exhibition posters and the first scene of an animation.",
+  bio: "I am a second-year design student. The work here was made in 2026 across five courses: Dynamic Imagery, Typography + Info, Digital Prototyping, Process & Production, and Research, Analysis & Process.\n\nMost of it is drawn in Illustrator or Procreate and set in InDesign. The animation was storyboarded in Procreate, modelled in Blender and put together in After Effects.",
+  school: "",
+  email: "",
+  socials: {},
+  heroImage: "/assets/projects/cover/web-hero.jpg",
+  heroImageAlt: "Black and white drawing of a room with a creature at the window, from the nightmare research painting."
+};
