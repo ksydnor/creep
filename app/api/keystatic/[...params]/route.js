@@ -1,7 +1,7 @@
 import { makeRouteHandler } from "@keystatic/next/route-handler";
 import { revalidatePath } from "next/cache";
 import config from "../../../../keystatic.config";
-import { audit, clientIp, editorUser } from "../../../../lib/audit";
+import { clientIp, editorUser, log } from "../../../../lib/log";
 
 const handler = makeRouteHandler({ config });
 
@@ -15,7 +15,7 @@ export async function POST(request, context) {
   const changes = params?.[0] === "update" ? await request.clone().json().catch(() => null) : null;
   const response = await handler.POST(request, context);
   if (changes) {
-    audit("editor.save", {
+    log(response.ok ? "info" : "warn", "editor.save", {
       user: editorUser(request),
       ip: clientIp(request),
       status: response.status,

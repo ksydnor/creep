@@ -139,7 +139,8 @@ filebeat.config.modules:
   path: \${path.config}/modules.d/*.yml
   reload.enabled: false
 filebeat.inputs:
-  # App stdout/stderr from systemd. Audit lines are JSON and land under audit.*.
+  # App stdout/stderr from systemd. lib/log.js lines are JSON and land under
+  # app.* (app.level, app.event, app.commit, ...); anything else stays in message.
   - type: journald
     id: pari-portfolio-app
     include_matches.match: ["_SYSTEMD_UNIT=pari-portfolio.service"]
@@ -148,7 +149,7 @@ filebeat.inputs:
     processors:
       - decode_json_fields:
           fields: ["message"]
-          target: "audit"
+          target: "app"
   # Caddy JSON access log: every request, with user_id for editor logins.
   - type: filestream
     id: pari-portfolio-http

@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { audit, clientIp } from "../../../lib/audit";
+import { audit, clientIp } from "../../../lib/log";
 
 // Each submission becomes one JSON file that the Keystatic "Messages"
 // collection lists. The folder is never committed because the repo is public.
